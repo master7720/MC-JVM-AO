@@ -1,11 +1,13 @@
 
 | Category                  | Argument                       | Description |
 |---------------------------|-------------------------------|-------------|
-| Memory Allocation         | -Xmx2G                        | Sets the maximum amount of RAM Minecraft can use |
+| Memory Allocation         | -Xmx4G                        | Sets the maximum amount of RAM Minecraft can use |
+|          | ---Xms2G                        | Sets the minimum amount of RAM Minecraft can use |
 | Garbage Collector         | -XX:+UseG1GC                  | Enables the G1 garbage collector |
 |          | -XX:MaxGCPauseMillis=200      | Tells the garbage collector to aim for pauses of no more than 200 milliseconds |
 |          | -XX:+ParallelRefProcEnabled   | Allows reference processing to run in parallel during garbage collection |
 |          | -XX:+DisableExplicitGC        | Prevents mods or the game from forcing full garbage collections |
+|          | -Xlog:gc*:file=gc.log:time,uptime,level        | GC logging for diagnosing performance issues |
 | G1GC Heap Tuning          | -XX:G1NewSizePercent=30       | Sets the minimum percentage of the heap used for new object allocation |
 |           | -XX:G1MaxNewSizePercent=40    | Limits how large the young generation can grow |
 |           | -XX:G1HeapRegionSize=8M       | Defines the size of G1GC memory regions |
@@ -17,3 +19,15 @@
 |      | -XX:+AlwaysPreTouch            | Pre-allocates and touches all heap memory at startup |
 |      | -XX:+PerfDisableSharedMem      | Disables JVM performance data sharing |
 |      | -XX:+AlwaysActAsServerClassMachine | Forces the JVM to apply server-grade optimizations |
+| Compilation & JIT     | -XX:+TieredCompilation | Tiered JIT compilation for better runtime performance |
+|      | -XX:+AggressiveOpts | Aggressive JVM optimizations |
+|      | -XX:+OptimizeStringConcat | Faster string operations |
+| Native Memory & CPU     | -XX:+UseLargePages | May improve performance with large heaps (requires OS support) |
+|      | -XX:ParallelGCThreads=16 | Use all cores for parallel GC(make sure to replace 16 with the actual number of physical cores your cpu has) |
+|      | -XX:+UseNUMA | Optimizes memory on multi-socket CPUs |
+|      | -XX:+UseCompressedOops | Saves memory on 64-bit JVM |
+| Misc     | -XX:+HeapDumpOnOutOfMemoryError | debugging mod memory leaks |
+|      | -Dsun.rmi.dgc.server.gcInterval=2147483646 | Reduces JVM overhead from mod network calls |
+
+
+
