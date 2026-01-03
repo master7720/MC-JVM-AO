@@ -1,5 +1,5 @@
 
-| test         | test                                          |
+| Category         | Argument          | Description |
 |---------------------|---------------------------------------------------------|
 | Memory Allocation | -Xmx2G             | Sets the maximum amount of RAM Minecraft can use             |
 | Garbage Collector | -XX:+UseG1GC             | Enables the G1 garbage collector             |
