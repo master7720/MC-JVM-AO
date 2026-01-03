@@ -2,7 +2,7 @@
 | Category                  | Argument                       | Description |
 |---------------------------|-------------------------------|-------------|
 | Memory Allocation         | -Xmx4G                        | Sets the maximum amount of RAM Minecraft can use |
-|          | ---Xms2G                        | Sets the minimum amount of RAM Minecraft can use |
+|          | -Xms2G                        | Sets the minimum amount of RAM Minecraft can use |
 | Garbage Collector         | -XX:+UseG1GC                  | Enables the G1 garbage collector |
 |          | -XX:MaxGCPauseMillis=200      | Tells the garbage collector to aim for pauses of no more than 200 milliseconds |
 |          | -XX:+ParallelRefProcEnabled   | Allows reference processing to run in parallel during garbage collection |
